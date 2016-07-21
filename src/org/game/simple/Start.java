@@ -1,0 +1,60 @@
+package org.game.simple;
+
+import java.awt.Color;
+import java.awt.Graphics;
+/**
+ * 
+ * Copyright 2008 
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+ * either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ *
+ * @project org.game.simple
+ * @author chenpeng  
+ * @email£ºceponline@yahoo.com.cn 
+ * @version 0.1
+ */
+public class Start {
+	int x;
+
+	int y;
+
+	int vy;
+
+	int width;
+
+	Color color;
+
+	static int num_Star = 20;
+
+	public Start(int x, int y, int vy, int width, Color color) {
+		this.x = x;
+		this.y = y;
+		this.vy = vy;
+		this.width = width;
+		this.color = color;
+	}
+
+	public boolean death() {
+		return y > 500;
+	}
+
+	public void draw(Graphics g) {
+		g.setColor(color);
+		g.fillOval(x, y, width, width);
+	}
+
+	public void move() {
+		y += vy;
+	}
+
+}
